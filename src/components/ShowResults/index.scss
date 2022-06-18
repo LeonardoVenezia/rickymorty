@@ -1,0 +1,70 @@
+@import '../../styles/globalStyles.scss';
+
+.ShowResultsError {
+    text-align: center;
+    font-size: $sizeBig;
+    color: $tertiaryColor;
+    padding-top: sizeBig;
+}
+
+.ShowResultsLoading {
+    text-align: center;
+    font-size: $sizeBig;
+    color: $secondaryColor;
+    padding-top: sizeBig;
+}
+
+.ShowResults {
+    padding: 0 $gridPadding;
+
+    .listResults {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: $sizeBase;
+        grid-row-gap: $sizeBase;
+        width: 100%;
+        list-style: none;
+
+        .result {
+            position: relative;
+
+            .charImage {
+                width: 100%;
+                border-radius: $borderRadius;
+            }
+
+            .charData {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, .6);
+                border-radius: $sizeBase;
+                width: 100%;
+                height: 100%;
+                padding: $sizeBase;
+                box-sizing: border-box;
+
+                &:hover {
+                    opacity: 1;
+                    border: $borderOK;
+                }
+            }
+
+            .charTitle {
+                @include smallTitle;
+                color: $primaryColor;
+            }
+
+            .charText {
+                @include smallText;
+                color: $blankColor;
+            }
+        }
+
+    }
+}

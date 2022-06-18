@@ -1,0 +1,34 @@
+@import '../../styles/globalStyles.scss';
+
+.SearchField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $sizeBase $gridPadding;
+
+    .form {
+        display: flex;
+
+        .bar {
+            padding: $halfSizeBase;
+            font-size: $sizeBig;
+            border-radius: $sizeBase 0 0 $sizeBase;
+            border: $borderOK;
+            border-right: none;
+            max-width: 55vw;
+            color: $secondaryColor;
+        }
+
+        .search {
+            padding: $halfSizeBase;
+            font-size: $sizeBig;
+            border-radius: 0 $sizeBase $sizeBase 0;
+            background-color: $blankColor;
+            border: $borderOK;
+            border-left: none;
+            cursor: pointer;
+            color: $secondaryColor;
+        }
+    }
+
+}

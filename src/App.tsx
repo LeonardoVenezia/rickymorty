@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import SearchField from './components/SearchField';
+import ShowResults from './components/ShowResults';
+import { getCharactersByName } from './services/characters/characters';
+// const Results = createContext({ results: [] });
+import Characters from './contexts/charactersContext';
 
-function App() {
+const App = () => {
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSearch = async (name: string) => {
+    setLoading(true);
+    const newResults = await getCharactersByName(name);
+    newResults ? setResults(newResults) : setError(true);
+    setLoading(false);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Characters.Provider value={{ results, loading, error }}>
+        <SearchField handleSearch={handleSearch} />
+        <ShowResults />
+      </Characters.Provider>
     </div>
   );
 }

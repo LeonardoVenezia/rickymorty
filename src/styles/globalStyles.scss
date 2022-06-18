@@ -1,0 +1,37 @@
+$primaryColor: #37E615;
+$secondaryColor: #9B2CE6;
+$tertiaryColor: #E63A2C;
+$blankColor: #fff;
+
+$sizeBase: 16px;
+$sizeSmall: 12px;
+$sizeBig: 24px;
+$halfSizeBase: 8px;
+$halfSizeSmall: 6px;
+
+$borderOK: 2px solid $primaryColor;
+$borderRadius: $sizeBase;
+
+$gridPadding: 10%;
+
+@mixin text {
+    font-size: $sizeBase;
+    margin-bottom: $halfSizeBase;
+}
+
+@mixin title {
+    font-size: $sizeBig;
+    margin-bottom: $halfSizeBase;
+    font-weight: bold;
+}
+
+@mixin smallText {
+    font-size: $sizeSmall;
+    margin-bottom: $halfSizeSmall;
+}
+
+@mixin smallTitle {
+    font-size: $sizeBase;
+    margin-bottom: $halfSizeSmall;
+    font-weight: bold;
+}
