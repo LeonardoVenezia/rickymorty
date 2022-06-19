@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './index.scss';
 
-const SearchField = ({ handleSearch }) => {
+const SearchField = () => {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/characters', { name: search });
-        handleSearch(search);
+        if (!search) return;
+        navigate(`/characters/${search}`);
     }
     return (
         <header className="SearchField">

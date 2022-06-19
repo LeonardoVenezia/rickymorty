@@ -1,6 +1,7 @@
 
 import { useContext } from 'react';
 import Characters from '../../contexts/CharContext';
+import CharacterCard from '../CharacterCard';
 
 import './index.scss'
 const ShowResults = () => {
@@ -10,27 +11,7 @@ const ShowResults = () => {
     return (
         <div className="ShowResults">
             <ul className="listResults">
-                {results?.map(result => {
-                    const month = new Date(result.created).getMonth();
-                    const year = new Date(result.created).getFullYear();
-                    return (
-                        <li key={result.id}>
-                            <div className="result">
-                                <img
-                                    src={result.image}
-                                    alt={result.name}
-                                    className="charImage"
-                                />
-                                <div className="charData">
-                                    <h3 className="charTitle">{result.name}</h3>
-                                    <p className="charText">Created: {month}/{year}</p>
-                                    <p className="charText">Species: {result.species}</p>
-                                    <p className="charText">Status: {result.status}</p>
-                                </div>
-                            </div>
-                        </li>
-                    )
-                })}
+                {results?.map(result => <CharacterCard data={result} />)}
             </ul>
         </div>
     );
