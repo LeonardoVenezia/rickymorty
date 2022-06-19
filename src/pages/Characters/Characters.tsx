@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import { getCharactersByName } from '../../services/characters/characters';
 import CharContext from '../../contexts/CharContext';
 import { useParams } from 'react-router-dom';
+import { postFavourites } from '../../services/characters/favourites';
 
 const Characters = () => {
     let { name } = useParams();
@@ -22,7 +23,7 @@ const Characters = () => {
 
     return (
         <div>
-            <CharContext.Provider value={{ results, loading, error }}>
+            <CharContext.Provider value={{ results, loading, error, postFavourites }}>
                 <Layout>
                     <ShowResults />
                 </Layout>
