@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './index.scss';
 
 const SearchField = ({ handleSearch }) => {
     const [search, setSearch] = useState('');
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
+        navigate('/characters', { name: search });
         handleSearch(search);
     }
     return (

@@ -1,6 +1,7 @@
 
-import { useContext, createContext } from 'react';
-import Characters from '../../contexts/charactersContext';
+import { useContext } from 'react';
+import Characters from '../../contexts/CharContext';
+
 import './index.scss'
 const ShowResults = () => {
     const { results, loading, error } = useContext(Characters);

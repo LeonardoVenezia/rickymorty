@@ -6,6 +6,6 @@ const initialState = {
     error: false,
 }
 
-const Characters = createContext(initialState);
+const CharContext = createContext(initialState);
 
-export default Characters;
+export default CharContext;
