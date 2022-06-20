@@ -20,7 +20,6 @@ const SearchField = () => {
 
     return (
         <header className="SearchField">
-
             <form className="form" onSubmit={handleSubmit}>
                 <div className="firstField">
                     <input

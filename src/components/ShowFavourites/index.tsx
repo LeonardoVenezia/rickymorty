@@ -8,7 +8,7 @@ const ShowFavourites = ({ favourites }: Props) => {
 
     return (
         <ul className='ShowFavourites'>
-            {favourites.map((fav) => (
+            {favourites?.map((fav) => (
                 <li className={`li--${fav.status}`} key={fav.name}>
                     <img
                         className='img'
