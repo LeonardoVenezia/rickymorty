@@ -7,15 +7,15 @@ import { useParams } from 'react-router-dom';
 import { postFavourites } from '../../services/characters/favourites';
 
 const Characters = () => {
-    let { name } = useParams();
+    let { name, status } = useParams();
     useEffect(() => {
         (async () => {
             setLoading(true);
-            const newResults = await getCharactersByName(name);
+            const newResults = await getCharactersByName(name, status);
             newResults ? setResults(newResults) : setError(true);
             setLoading(false);
         })()
-    }, [name])
+    }, [name, status])
 
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);

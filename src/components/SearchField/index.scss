@@ -7,28 +7,52 @@
     padding: $sizeBase $gridPadding;
 
     .form {
-        display: flex;
+        .firstField {
+            display: flex;
 
-        .bar {
-            padding: $halfSizeBase;
-            font-size: $sizeBig;
-            border-radius: $sizeBase 0 0 $sizeBase;
-            border: $borderOK;
-            border-right: none;
-            max-width: 55vw;
-            color: $secondaryColor;
+            .bar {
+                padding: $halfSizeBase;
+                font-size: $sizeBig;
+                border-radius: $sizeBase 0 0 $sizeBase;
+                border: $borderOK;
+                border-right: none;
+                max-width: 55vw;
+                color: $secondaryColor;
+            }
+
+            .search {
+                padding: $halfSizeBase;
+                font-size: $sizeBig;
+                border-radius: 0 $sizeBase $sizeBase 0;
+                background-color: $blankColor;
+                border: $borderOK;
+                border-left: none;
+                cursor: pointer;
+                color: $secondaryColor;
+            }
         }
 
-        .search {
-            padding: $halfSizeBase;
-            font-size: $sizeBig;
-            border-radius: 0 $sizeBase $sizeBase 0;
-            background-color: $blankColor;
-            border: $borderOK;
-            border-left: none;
-            cursor: pointer;
-            color: $secondaryColor;
+        .secondField {
+            display: flex;
+            justify-content: space-between;
+            margin-top: $sizeBase;
+
+            .status {
+                padding: $halfSizeSmall;
+                font-size: $sizeSmall;
+                border-radius: $sizeBase;
+                border: $borderOK;
+            }
+
+            .favourites {
+                padding: $halfSizeSmall;
+                font-size: $sizeSmall;
+                border-radius: $sizeBase;
+                border: $borderOK;
+                background-color: $blankColor;
+            }
         }
+
     }
 
 }

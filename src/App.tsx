@@ -1,17 +1,15 @@
-import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import SearchField from './components/SearchField';
-import ShowResults from './components/ShowResults';
-import { getCharactersByName } from './services/characters/characters';
-// import Characters from './contexts/CharContext';
 import Home from './pages/Home/Home';
 import Characters from './pages/Characters/Characters';
+import Favourites from './pages/Favourites/Favourites';
 
 const App = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="characters/:name" element={<Characters />} />
+    <Route path="characters/:name/:status" element={<Characters />} />
+    <Route path="favourites" element={<Favourites />} />
+
   </Routes>
 )
 

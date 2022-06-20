@@ -1,0 +1,66 @@
+@import '../../styles/globalStyles.scss';
+
+.ShowFavourites {
+    .li {
+        grid-template-columns: 100px minMax(70px, 250px) minMax(70px, 250px);
+        grid-column-gap: $halfSizeSmall;
+        grid-row-gap: $halfSizeSmall;
+        margin: 0 $gridPadding $sizeBase;
+        border-radius: $sizeBase;
+        list-style: none;
+        display: grid;
+
+        &--Alive {
+            @extend .li;
+            border: 1px solid $primaryColor;
+        }
+
+        &--Dead {
+            @extend .li;
+            border: 1px solid $tertiaryColor;
+        }
+
+        &--unknown {
+            @extend .li;
+            border: 1px solid $secondaryColor;
+        }
+
+        .img {
+            height: 100px;
+            border-radius: $borderRadius;
+        }
+
+        .dataCont {
+            margin-left: $sizeBase;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .item {
+                font-size: $sizeSmall;
+                margin-bottom: $halfSizeSmall;
+
+                &--name,
+                &--Alive {
+                    @extend .item;
+                    color: $primaryColor;
+                    font-weight: bold;
+                }
+
+                &--Dead {
+                    @extend .item;
+                    color: $tertiaryColor;
+                    font-weight: bold;
+                }
+
+                &--unknown {
+                    @extend .item;
+                    color: $secondaryColor;
+                    font-weight: bold;
+                }
+
+
+            }
+        }
+    }
+}

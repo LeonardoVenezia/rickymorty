@@ -2,8 +2,8 @@
 import { useContext } from 'react';
 import Characters from '../../contexts/CharContext';
 import CharacterCard from '../CharacterCard';
+import './index.scss';
 
-import './index.scss'
 const ShowResults = () => {
     const { results, loading, error, postFavourites } = useContext(Characters);
     if (loading) return <p className="ShowResultsLoading">Loading...</p>;
