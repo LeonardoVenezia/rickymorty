@@ -3,18 +3,18 @@ import { Link, useNavigate } from 'react-router-dom';
 import './index.scss';
 
 const SearchField = () => {
-    const [search, setSearch] = useState('');
-    const [status, setStatus] = useState('none');
+    const [search, setSearch] = useState<string>('');
+    const [status, setStatus] = useState<string>('none');
 
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!search) return;
         navigate(`/characters/${search}/${status}`);
     }
 
-    const handleSelect = (e) => {
+    const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setStatus(e.target.value);
     };
 

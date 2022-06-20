@@ -1,6 +1,10 @@
-import './index.scss';
+import { Char } from '../../types/interfaces';
 
-const ShowFavourites = ({ favourites }) => {
+interface Props {
+    favourites: Array<Char>;
+}
+
+const ShowFavourites = ({ favourites }: Props) => {
 
     return (
         <ul className='ShowFavourites'>

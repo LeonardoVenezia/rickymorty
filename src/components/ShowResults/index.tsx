@@ -2,6 +2,8 @@
 import { useContext } from 'react';
 import Characters from '../../contexts/CharContext';
 import CharacterCard from '../CharacterCard';
+import { Char } from '../../types/interfaces';
+
 import './index.scss';
 
 const ShowResults = () => {
@@ -12,7 +14,7 @@ const ShowResults = () => {
     return (
         <div className="ShowResults">
             <ul className="listResults">
-                {results?.map(result => (
+                {results?.map((result: Char) => (
                     <CharacterCard
                         data={result}
                         postFavourites={postFavourites}

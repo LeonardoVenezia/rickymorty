@@ -1,10 +1,28 @@
 import './index.scss';
 import { useState } from 'react';
+import { Char } from '../../types/interfaces';
 
-const CharacterCard = ({ data, postFavourites }) => {
+interface data {
+    created: string;
+    id: string;
+    image: string;
+    name: string;
+    species: string;
+    status: string;
+    favourite: boolean;
+}
+
+interface props {
+    data: Char;
+    postFavourites(data: data): void;
+}
+
+const CharacterCard = ({ data, postFavourites }: props) => {
     const month = new Date(data.created).getMonth();
     const year = new Date(data.created).getFullYear();
-    const [fav, setFav] = useState(data.favourite);
+
+    const [fav, setFav] = useState<boolean>(data.favourite);
+
     const postFav = () => {
         postFavourites(data);
         setFav(true);

@@ -5,6 +5,7 @@ import { getCharactersByName } from '../../services/characters/characters';
 import CharContext from '../../contexts/CharContext';
 import { useParams } from 'react-router-dom';
 import { postFavourites } from '../../services/characters/favourites';
+import { Char } from '../../types/interfaces';
 
 const Characters = () => {
     let { name, status } = useParams();
@@ -17,9 +18,9 @@ const Characters = () => {
         })()
     }, [name, status])
 
-    const [results, setResults] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const [results, setResults] = useState<Char[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
 
     return (
         <div>
