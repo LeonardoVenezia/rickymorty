@@ -12,7 +12,7 @@ jest.mock("react-router-dom", () => ({
 
 describe('SearchField', () => {
 
-    test('Render status', async () => {
+    test('Location should changes', async () => {
         const component = render(
             <MemoryRouter>
                 <SearchField />
